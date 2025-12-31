@@ -1,6 +1,17 @@
-# Neovim Flake
+# Neovim Flake ❄️
 
 ![Showcase](assets/showcase.png)
+
+**Features**:
+
+- LSP configurations for Nix, Rust, Lua, Python, Typescript, C/C++ and more...
+- Autocompletion with Blink
+- Git integration (Lazygit, Gitsings)
+- Wide range of formatters and linters
+- Better quickfix list
+- Telescope
+- Neo-tree
+- And much, much more...
 
 ## Getting started
 
