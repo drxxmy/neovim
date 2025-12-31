@@ -1,5 +1,7 @@
 # Neovim Flake
 
+![Showcase](assets/showcase.png)
+
 ## Getting started
 
 ### Run without installation
