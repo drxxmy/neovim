@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   config = {
     vim = {
       extraPackages = with pkgs; [
@@ -17,14 +18,14 @@
         nvim-lint = {
           enable = true;
           linters_by_ft = {
-            clang = ["cpplint"];
-            javascript = ["eslint_d"];
-            typescript = ["eslint_d"];
-            lua = ["selene"];
+            clang = [ "cpplint" ];
+            javascript = [ "eslint_d" ];
+            typescript = [ "eslint_d" ];
+            lua = [ "selene" ];
             # yaml = [ "yamllint" ];
-            html = ["htmlhint"];
-            markdown = ["markdownlint"];
-            bash = ["shellcheck"];
+            html = [ "htmlhint" ];
+            markdown = [ "markdownlint" ];
+            bash = [ "shellcheck" ];
             # python = [ "pylint" ];
             nix = [
               "statix"

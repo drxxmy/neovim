@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   auto-indent-nvim = pkgs.vimUtils.buildVimPlugin {
     pname = "auto-indent.nvim";
     version = "2023-11-03";
@@ -9,9 +10,10 @@
       sha256 = "sha256-dubpVupLfc81Jvb4woSQ63n2+VsJCRjnvDzkFTQE2MQ=";
     };
     meta.homepage = "https://github.com/VidocqH/auto-indent.nvim";
-    meta.hydraPlatforms = [];
+    meta.hydraPlatforms = [ ];
   };
-in {
+in
+{
   config = {
     vim = {
       extraPlugins = {
