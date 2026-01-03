@@ -1,8 +1,9 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   config.vim.autocmds = [
     {
-      event = ["FileType"];
-      pattern = ["qf"];
+      event = [ "FileType" ];
+      pattern = [ "qf" ];
       desc = "Attach keymaps for quickfix list";
       callback = lib.generators.mkLuaInline ''
         function()

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   config = {
     vim = {
       extraPackages = with pkgs; [
@@ -25,7 +26,7 @@
         extensions = [
           {
             name = "fzf";
-            packages = [pkgs.vimPlugins.telescope-fzf-native-nvim];
+            packages = [ pkgs.vimPlugins.telescope-fzf-native-nvim ];
             setup = {
               fzf = {
                 fuzzy = true;

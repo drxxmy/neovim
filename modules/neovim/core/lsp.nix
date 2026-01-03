@@ -1,11 +1,13 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   vue_plugin = {
     name = "@vue/typescript-plugin";
     location = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
-    languages = ["vue"];
+    languages = [ "vue" ];
     configNamespace = "typescript";
   };
-in {
+in
+{
   config = {
     vim = {
       keymaps = [
@@ -37,7 +39,7 @@ in {
           enable = true;
         };
         servers = {
-          tailwindcss = {};
+          tailwindcss = { };
           vtsls = {
             settings = {
               vtsls = {
@@ -58,10 +60,10 @@ in {
               "vue"
             ];
           };
-          vue_ls = {};
-          pylsp = {};
-          nil_ls = {};
-          nixd = {};
+          vue_ls = { };
+          pylsp = { };
+          nil_ls = { };
+          nixd = { };
         };
         mappings = {
           codeAction = "gra";
