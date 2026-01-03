@@ -9,7 +9,7 @@
         isort
         prettierd
         rustywind
-        alejandra
+        nixfmt
       ];
       formatter.conform-nvim = {
         enable = true;
@@ -19,7 +19,7 @@
           };
           formatters_by_ft = {
             nix = [
-              "alejandra"
+              "nixfmt"
             ];
             yaml = [
               "yamlfmt"
