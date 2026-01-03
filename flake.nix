@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs = inputs @ {flake-parts, ...}:
@@ -14,6 +15,7 @@
         "aarch64-darwin"
       ];
       imports = [
+        ./modules/parts/formatter.nix
         ./modules/parts/package.nix
       ];
     };
