@@ -13,6 +13,7 @@
         # pylint
         statix
         deadnix
+        pylint
       ];
       diagnostics = {
         nvim-lint = {
@@ -26,7 +27,7 @@
             html = [ "htmlhint" ];
             markdown = [ "markdownlint" ];
             bash = [ "shellcheck" ];
-            # python = [ "pylint" ];
+            python = [ "pylint" ];
             nix = [
               "statix"
               "deadnix"
