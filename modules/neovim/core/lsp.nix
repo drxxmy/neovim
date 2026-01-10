@@ -20,7 +20,6 @@ in
         }
       ];
       extraPackages = with pkgs; [
-        python313Packages.python-lsp-server
         nixd
         nil
         nixfmt
@@ -61,7 +60,6 @@ in
             ];
           };
           vue_ls = { };
-          pylsp = { };
           nil_ls = { };
           nixd = { };
         };
@@ -79,12 +77,21 @@ in
       languages = {
         rust.enable = true;
         ts.enable = true;
-        # python = {
-        #   enable = true;
-        #   lsp = {
-        #     enable = true;
-        #   };
-        # };
+        python = {
+          enable = true;
+          lsp = {
+            enable = true;
+            servers = [ "pyright" ];
+          };
+          format = {
+            enable = true;
+            type = [
+              "black"
+              "isort"
+            ];
+          };
+          treesitter.enable = true;
+        };
         html.enable = true;
         lua.enable = true;
         php.enable = true;

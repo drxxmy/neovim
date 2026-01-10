@@ -10,10 +10,8 @@
         htmlhint
         markdownlint-cli
         shellcheck
-        # pylint
         statix
         deadnix
-        pylint
       ];
       diagnostics = {
         nvim-lint = {
@@ -27,7 +25,6 @@
             html = [ "htmlhint" ];
             markdown = [ "markdownlint" ];
             bash = [ "shellcheck" ];
-            python = [ "pylint" ];
             nix = [
               "statix"
               "deadnix"
