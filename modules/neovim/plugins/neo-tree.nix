@@ -10,6 +10,11 @@
             filtered_items = {
               hide_by_name = [
                 "__pycache__"
+                ".direnv"
+                ".devenv"
+                "node_modules"
+                ".vscode"
+                ".vite"
               ];
 
               never_show = [
