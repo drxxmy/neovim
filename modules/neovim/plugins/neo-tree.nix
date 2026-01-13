@@ -8,7 +8,6 @@
           git_status_async = true;
           filesystem = {
             filtered_items = {
-              visible = true;
               hide_by_name = [
                 "__pycache__"
               ];
