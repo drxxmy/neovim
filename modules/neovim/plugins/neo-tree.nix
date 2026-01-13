@@ -9,6 +9,13 @@
           filesystem = {
             filtered_items = {
               visible = true;
+              hide_by_name = [
+                "__pycache__"
+              ];
+
+              never_show = [
+                "__pycache__"
+              ];
             };
           };
         };
