@@ -32,6 +32,9 @@
               "rustywind"
               "prettierd"
             ];
+            markdown = [
+              "prettierd"
+            ];
           };
         };
       };
