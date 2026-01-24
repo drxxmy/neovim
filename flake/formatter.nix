@@ -5,8 +5,16 @@
     { pkgs, ... }:
     {
       treefmt = {
-        programs.nixfmt.enable = true;
-        programs.nixfmt.package = pkgs.nixfmt;
+        programs = {
+          # Nix
+          nixfmt = {
+            enable = true;
+            package = pkgs.nixfmt;
+          };
+
+          # Markdown
+          prettier.enable = true;
+        };
       };
     };
 }
