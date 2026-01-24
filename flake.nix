@@ -16,8 +16,8 @@
         "aarch64-darwin"
       ];
       imports = [
-        ./modules/parts/formatter.nix
-        ./modules/parts/package.nix
+        ./flake/formatter.nix
+        ./flake/package.nix
       ];
     };
 }

@@ -3,8 +3,6 @@
   config = {
     vim = {
       extraPackages = with pkgs; [
-        # yamllint
-        yamlfmt
         black
         isort
         prettierd
@@ -22,7 +20,7 @@
               "nixfmt"
             ];
             yaml = [
-              "yamlfmt"
+              "prettierd"
             ];
             python = [
               "isort"

@@ -1,16 +1,16 @@
-{ inputs, ... }:
+{ inputs, self, ... }:
 {
   perSystem =
     { pkgs, ... }:
     let
-      mylib = import ../../lib { inherit (inputs.nixpkgs) lib; };
+      mylib = import "${self}/lib" { inherit (inputs.nixpkgs) lib; };
       customNeovim = inputs.nvf.lib.neovimConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
           inherit mylib;
         };
         modules = [
-          ../../modules/neovim
+          "${self}/modules"
         ];
       };
     in
