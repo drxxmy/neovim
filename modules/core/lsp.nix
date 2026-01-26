@@ -95,7 +95,14 @@ in
         html.enable = true;
         lua.enable = true;
         php.enable = true;
-        clang.enable = true;
+        clang = {
+          enable = true;
+          lsp = {
+            enable = true;
+            servers = [ "ccls" ];
+          };
+          treesitter.enable = true;
+        };
       };
     };
   };
