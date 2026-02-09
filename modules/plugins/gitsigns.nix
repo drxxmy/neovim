@@ -1,11 +1,5 @@
 {
-  config = {
-    vim = {
-      git = {
-        gitsigns = {
-          enable = true;
-        };
-      };
-    };
+  config.vim.git = {
+    gitsigns.enable = true;
   };
 }

@@ -1,10 +1,8 @@
 {
-  config = {
-    vim = {
-      terminal.toggleterm = {
-        enable = true;
-        lazygit.enable = true;
-      };
+  config.vim = {
+    terminal.toggleterm = {
+      enable = true;
+      lazygit.enable = true;
     };
   };
 }

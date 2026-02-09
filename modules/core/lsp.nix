@@ -1,108 +1,99 @@
 { pkgs, ... }:
-let
-  vue_plugin = {
-    name = "@vue/typescript-plugin";
-    location = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
-    languages = [ "vue" ];
-    configNamespace = "typescript";
-  };
-in
 {
-  config = {
-    vim = {
-      keymaps = [
-        {
-          key = "<leader>it";
-          mode = "n";
-          silent = true;
-          action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>";
-          desc = "Toggle inlay hints";
-        }
-      ];
-      extraPackages = with pkgs; [
-        nixd
-        nil
-        nixfmt
-        vue-language-server
-        vtsls
-        tailwindcss-language-server
-      ];
-      lsp = {
-        enable = true;
-        formatOnSave = true;
-        inlayHints.enable = true;
-        lspconfig = {
-          enable = true;
-        };
-        lspkind = {
-          enable = true;
-        };
-        servers = {
-          tailwindcss = { };
-          vtsls = {
-            settings = {
-              vtsls = {
-                tsserver = {
-                  globalPlugins = [
-                    vue_plugin
-                  ];
-                };
+  config.vim = {
+    keymaps = [
+      {
+        key = "<leader>it";
+        mode = "n";
+        silent = true;
+        action = ":lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>";
+        desc = "Toggle inlay hints";
+      }
+    ];
+    extraPackages = with pkgs; [
+      nixd
+      nil
+      nixfmt
+      vue-language-server
+      vtsls
+      tailwindcss-language-server
+    ];
+    lsp = {
+      enable = true;
+      formatOnSave = true;
+      inlayHints.enable = true;
+      lspconfig.enable = true;
+      lspkind.enable = true;
+      servers = {
+        tailwindcss = { };
+        vtsls = {
+          settings = {
+            vtsls = {
+              tsserver = {
+                globalPlugins = [
+                  {
+                    name = "@vue/typescript-plugin";
+                    location = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+                    languages = [ "vue" ];
+                    configNamespace = "typescript";
+                  }
+                ];
               };
             };
-            filetypes = [
-              "javascript"
-              "javascriptreact"
-              "javascript.jsx"
-              "typescript"
-              "typescriptreact"
-              "typescript.tsx"
-              "vue"
-            ];
           };
-          vue_ls = { };
-          nil_ls = { };
-          nixd = { };
+          filetypes = [
+            "javascript"
+            "javascriptreact"
+            "javascript.jsx"
+            "typescript"
+            "typescriptreact"
+            "typescript.tsx"
+            "vue"
+          ];
         };
-        mappings = {
-          codeAction = "gra";
-          goToDeclaration = "grD";
-          goToDefinition = "grd";
-          hover = "K";
-          listImplementations = "gri";
-          listReferences = "gri";
-          renameSymbol = "grn";
-          signatureHelp = "<C-s>";
-        };
+        vue_ls = { };
+        nil_ls = { };
+        nixd = { };
       };
-      languages = {
-        rust.enable = true;
-        ts.enable = true;
-        python = {
+      mappings = {
+        codeAction = "gra";
+        goToDeclaration = "grD";
+        goToDefinition = "grd";
+        hover = "K";
+        listImplementations = "gri";
+        listReferences = "gri";
+        renameSymbol = "grn";
+        signatureHelp = "<C-s>";
+      };
+    };
+    languages = {
+      rust.enable = true;
+      ts.enable = true;
+      python = {
+        enable = true;
+        lsp = {
           enable = true;
-          lsp = {
-            enable = true;
-            servers = [ "pyright" ];
-          };
-          format = {
-            enable = true;
-            type = [
-              "black"
-              "isort"
-            ];
-          };
-          treesitter.enable = true;
+          servers = [ "pyright" ];
         };
-        html.enable = true;
-        lua.enable = true;
-        php.enable = true;
-        clang = {
+        format = {
           enable = true;
-          lsp = {
-            enable = true;
-            servers = [ "ccls" ];
-          };
-          treesitter.enable = true;
+          type = [
+            "black"
+            "isort"
+          ];
         };
+        treesitter.enable = true;
+      };
+      html.enable = true;
+      lua.enable = true;
+      php.enable = true;
+      clang = {
+        enable = true;
+        lsp = {
+          enable = true;
+          servers = [ "ccls" ];
+        };
+        treesitter.enable = true;
       };
     };
   };

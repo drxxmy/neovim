@@ -1,12 +1,8 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        visual-whitespace-nvim = {
-          package = visual-whitespace-nvim;
-        };
-      };
+  config.vim.extraPlugins = {
+    visual-whitespace-nvim = {
+      package = pkgs.vimPlugins.visual-whitespace-nvim;
     };
   };
 }

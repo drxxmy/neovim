@@ -1,13 +1,9 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        presence-nvim = {
-          package = presence-nvim;
-          setup = "require('presence').setup({})";
-        };
-      };
+  config.vim.extraPlugins = {
+    presence-nvim = {
+      package = pkgs.vimPlugins.presence-nvim;
+      setup = "require('presence').setup({})";
     };
   };
 }

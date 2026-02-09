@@ -1,13 +1,9 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        nvim-scrollbar = {
-          package = nvim-scrollbar;
-          setup = "require('scrollbar').setup()";
-        };
-      };
+  config.vim.extraPlugins = {
+    nvim-scrollbar = {
+      package = pkgs.vimPlugins.nvim-scrollbar;
+      setup = "require('scrollbar').setup()";
     };
   };
 }

@@ -1,13 +1,9 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        nvim-surround = {
-          package = nvim-surround;
-          setup = "require('nvim-surround').setup()";
-        };
-      };
+  config.vim.extraPlugins = {
+    nvim-surround = {
+      package = pkgs.vimPlugins.nvim-surround;
+      setup = "require('nvim-surround').setup()";
     };
   };
 }

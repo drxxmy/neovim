@@ -1,13 +1,9 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        colorful-winsep-nvim = {
-          package = colorful-winsep-nvim;
-          setup = "require('colorful-winsep').setup()";
-        };
-      };
+  config.vim.extraPlugins = {
+    colorful-winsep-nvim = {
+      package = pkgs.vimPlugins.colorful-winsep-nvim;
+      setup = "require('colorful-winsep').setup()";
     };
   };
 }

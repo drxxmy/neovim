@@ -1,39 +1,37 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPackages = with pkgs; [
-        black
-        isort
-        prettierd
-        rustywind
-        nixfmt
-      ];
-      formatter.conform-nvim = {
-        enable = true;
-        setupOpts = {
-          defult_format_opts = {
-            lsp_format = "fallback";
-          };
-          formatters_by_ft = {
-            nix = [
-              "nixfmt"
-            ];
-            yaml = [
-              "prettierd"
-            ];
-            python = [
-              "isort"
-              "black"
-            ];
-            vue = [
-              "rustywind"
-              "prettierd"
-            ];
-            markdown = [
-              "prettierd"
-            ];
-          };
+  config.vim = {
+    extraPackages = with pkgs; [
+      black
+      isort
+      prettierd
+      rustywind
+      nixfmt
+    ];
+    formatter.conform-nvim = {
+      enable = true;
+      setupOpts = {
+        defult_format_opts = {
+          lsp_format = "fallback";
+        };
+        formatters_by_ft = {
+          nix = [
+            "nixfmt"
+          ];
+          yaml = [
+            "prettierd"
+          ];
+          python = [
+            "isort"
+            "black"
+          ];
+          vue = [
+            "rustywind"
+            "prettierd"
+          ];
+          markdown = [
+            "prettierd"
+          ];
         };
       };
     };

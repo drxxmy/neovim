@@ -1,12 +1,8 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        dropbar-nvim = {
-          package = dropbar-nvim;
-        };
-      };
+  config.vim.extraPlugins = {
+    dropbar-nvim = {
+      package = pkgs.vimPlugins.dropbar-nvim;
     };
   };
 }

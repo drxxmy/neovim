@@ -1,13 +1,9 @@
 { pkgs, ... }:
 {
-  config = {
-    vim = {
-      extraPlugins = with pkgs.vimPlugins; {
-        numb-nvim = {
-          package = numb-nvim;
-          setup = "require('numb').setup()";
-        };
-      };
+  config.vim.extraPlugins = {
+    numb-nvim = {
+      package = pkgs.vimPlugins.numb-nvim;
+      setup = "require('numb').setup()";
     };
   };
 }
