@@ -12,7 +12,6 @@
     ];
     extraPackages = with pkgs; [
       nixd
-      nil
       nixfmt
       vue-language-server
       vtsls
@@ -51,17 +50,6 @@
           ];
         };
         vue_ls = { };
-        nil_ls = {
-          on_attach = lib.generators.mkLuaInline ''
-            function(client, bufnr)
-              -- Make nil_ls passive (hints + diagnostics only)
-              client.server_capabilities.renameProvider = false
-              client.server_capabilities.codeActionProvider = false
-              client.server_capabilities.documentFormattingProvider = false
-              client.server_capabilities.documentRangeFormattingProvider = false
-            end
-          '';
-        };
         nixd = { };
       };
       mappings = {
