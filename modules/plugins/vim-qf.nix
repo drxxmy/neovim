@@ -1,6 +1,14 @@
 { pkgs, ... }:
 {
   config.vim = {
+    lazy.plugins = {
+      vim-qf = {
+        package = pkgs.vimPlugins.vim-qf;
+
+        # Load only when quickfix window opens
+        ft = [ "qf" ];
+      };
+    };
     keymaps = [
       {
         key = "<A-q>";
@@ -10,10 +18,5 @@
         desc = "Toggle quickfix window";
       }
     ];
-    extraPlugins = with pkgs.vimPlugins; {
-      vim-qf = {
-        package = vim-qf;
-      };
-    };
   };
 }

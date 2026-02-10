@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
-  config.vim.extraPlugins = {
-    colorful-winsep-nvim = {
+  config.vim.lazy.plugins = {
+    "colorful-winsep.nvim" = {
       package = pkgs.vimPlugins.colorful-winsep-nvim;
-      setup = "require('colorful-winsep').setup()";
+      setupModule = "colorful-winsep";
+      event = [ "WinLeave" ];
     };
   };
 }

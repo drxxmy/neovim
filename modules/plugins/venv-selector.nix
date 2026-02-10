@@ -4,10 +4,19 @@
     extraPackages = with pkgs; [
       fd
     ];
-    extraPlugins = with pkgs.vimPlugins; {
-      venv-selector = {
-        package = venv-selector-nvim;
-        setup = "require('venv-selector').setup({})";
+    lazy.plugins = {
+      "venv-selector.nvim" = {
+        package = pkgs.vimPlugins.venv-selector-nvim;
+        setupModule = "venv-selector";
+
+        # Load only when needed
+        cmd = [ "VenvSelect" ];
+        keys = [
+          {
+            key = "<leader>,";
+            mode = "n";
+          }
+        ];
       };
     };
     keymaps = [

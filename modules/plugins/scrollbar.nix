@@ -1,9 +1,13 @@
 { pkgs, ... }:
 {
-  config.vim.extraPlugins = {
+  config.vim.lazy.plugins = {
     nvim-scrollbar = {
       package = pkgs.vimPlugins.nvim-scrollbar;
-      setup = "require('scrollbar').setup()";
+      setupModule = "scrollbar";
+      event = [
+        "BufReadPost"
+        "BufNewFile"
+      ];
     };
   };
 }

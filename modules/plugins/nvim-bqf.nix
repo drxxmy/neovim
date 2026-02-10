@@ -1,15 +1,18 @@
 { pkgs, ... }:
 {
-  config.vim.extraPlugins = {
+  config.vim.lazy.plugins = {
     nvim-bqf = {
       package = pkgs.vimPlugins.nvim-bqf;
-      setup = ''
-        require('bqf').setup({
-          auto_resize_height = true,
-          preview = {
-            win_height = 999, -- Preview occupy fullsreen
-          },
-        })'';
+      setupModule = "bqf";
+      setupOpts = {
+        auto_resize_height = true;
+        preview = {
+          win_height = 999;
+        };
+      };
+
+      # Load only when quickfix window opens
+      ft = [ "qf" ];
     };
   };
 }
