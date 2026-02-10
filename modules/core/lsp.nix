@@ -16,6 +16,7 @@
       vue-language-server
       vtsls
       tailwindcss-language-server
+      lua-language-server
     ];
     lsp = {
       enable = true;
@@ -51,6 +52,7 @@
         };
         vue_ls = { };
         nixd = { };
+        lua_ls = { };
       };
       mappings = {
         codeAction = "gra";
@@ -82,7 +84,6 @@
         treesitter.enable = true;
       };
       # html.enable = true; # NOTE: broken
-      lua.enable = true;
       php.enable = true;
       clang = {
         enable = true;
