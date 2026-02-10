@@ -93,7 +93,7 @@
         };
         treesitter.enable = true;
       };
-      html.enable = true;
+      # html.enable = true; # NOTE: broken
       lua.enable = true;
       php.enable = true;
       clang = {
