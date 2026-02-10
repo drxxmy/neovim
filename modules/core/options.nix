@@ -15,6 +15,7 @@
       showtabline = 2;
       expandtab = true;
       smartindent = true;
+      autoindent = true;
       breakindent = true;
 
       # Search
