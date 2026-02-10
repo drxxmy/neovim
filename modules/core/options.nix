@@ -8,15 +8,13 @@
       # General
       scrolloff = 8;
 
-      # Tab Settings
+      # Indentation
       tabstop = 2;
+      shiftwidth = 2;
       softtabstop = 2;
       showtabline = 2;
       expandtab = true;
-
-      # Indentation
       smartindent = true;
-      shiftwidth = 2;
       breakindent = true;
 
       # Search
