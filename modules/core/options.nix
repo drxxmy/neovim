@@ -5,6 +5,9 @@
       registers = "unnamed,unnamedplus";
     };
     options = {
+      # Project-local configuration
+      exrc = true;
+
       # General
       scrolloff = 8;
 
