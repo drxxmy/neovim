@@ -1,6 +1,6 @@
 {
   config.vim.keymaps = [
-    # Split navigation
+    # Splits
     {
       key = "<C-h>";
       mode = "n";
@@ -28,6 +28,20 @@
       silent = true;
       action = "<C-w>k";
       desc = "Move to the top split";
+    }
+    {
+      key = "<leader>-";
+      mode = "n";
+      silent = true;
+      action = "<cmd>horizontal split<cr>";
+      desc = "Split buffer horizontally";
+    }
+    {
+      key = "<leader>|";
+      mode = "n";
+      silent = true;
+      action = "<cmd>vertical split<cr>";
+      desc = "Split buffer vertically";
     }
   ];
 }
