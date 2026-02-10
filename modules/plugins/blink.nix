@@ -4,29 +4,15 @@
       enable = true;
       friendly-snippets.enable = true;
       setupOpts = {
+        cmdline.keymap.preset = "super-tab";
         completion = {
           documentation.auto_show = true;
           menu.auto_show = true;
         };
-      };
-
-      mappings = {
-        close = "<C-e>";
-        confirm = "<Tab>";
-        next = "<C-j>";
-        previous = "<C-k>";
-        scrollDocsDown = "<C-u>";
-        scrollDocsUp = "<C-d>";
-      };
-
-      setupOpts = {
         signature = {
           enabled = true;
-          trigger = {
-            enabled = true;
-          };
+          trigger.enabled = true;
         };
-
         sources = {
           default = [
             "lsp"
@@ -34,7 +20,6 @@
             "path"
             "buffer"
           ];
-
           providers = {
             lsp = {
               min_keyword_length = 0;
@@ -54,8 +39,14 @@
             };
           };
         };
-
-        cmdline.keymap.preset = "super-tab";
+      };
+      mappings = {
+        close = "<C-e>";
+        confirm = "<Tab>";
+        next = "<C-j>";
+        previous = "<C-k>";
+        scrollDocsDown = "<C-u>";
+        scrollDocsUp = "<C-d>";
       };
     };
   };
