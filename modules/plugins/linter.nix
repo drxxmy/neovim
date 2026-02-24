@@ -6,7 +6,6 @@
       eslint_d
       selene
       htmlhint
-      markdownlint-cli
       shellcheck
       statix
       deadnix
@@ -20,7 +19,6 @@
           typescript = [ "eslint_d" ];
           lua = [ "selene" ];
           html = [ "htmlhint" ];
-          markdown = [ "markdownlint" ];
           bash = [ "shellcheck" ];
           nix = [
             "statix"
