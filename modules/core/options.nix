@@ -1,9 +1,5 @@
 {
   config.vim = {
-    clipboard = {
-      enable = true;
-      registers = "unnamed,unnamedplus";
-    };
     options = {
       # Project-local configuration
       exrc = true;
