@@ -1,46 +1,35 @@
 {
   config.vim.statusline.lualine = {
     enable = true;
-    sectionSeparator = {
-      left = "";
-      right = "";
-    };
-    componentSeparator = {
-      left = "";
-      right = "";
+    setupOpts = {
+      tabline = {
+        lualine_a = [ "buffers" ];
+        lualine_z = [ "tabs" ];
+      };
     };
     activeSection = {
       a = [
-        ''
-          { 'mode', separator = { right = '', left = '' }, right_padding = 0 }
+        /* lua */ ''
+          { "mode" }
         ''
       ];
       b = [
-        ''
-          {
-            'filename',
-            symbols = {modified = ' ', readonly = ' '},
-            separator = { right = '', left = '' }
-          }
+        /* lua */ ''
+          { "branch", icons_enabled = false }
         ''
       ];
       c = [
-        ''
+        /* lua */ ''
           {
             "diff",
             colored = false,
-            diff_color = {
-              -- Same color values as the general color option can be used here.
-              added    = 'DiffAdd',    -- Changes the diff's added color
-              modified = 'DiffChange', -- Changes the diff's modified color
-              removed  = 'DiffDelete', -- Changes the diff's removed color you
-            },
+            color = 'comment',
             symbols = {added = '+', modified = '~', removed = '-'}, -- Changes the diff symbols
           }
         ''
       ];
       x = [
-        ''
+        /* lua */ ''
           {
             "diagnostics",
             sources = {'nvim_lsp', 'nvim_diagnostic', 'nvim_diagnostic', 'vim_lsp', 'coc'},
@@ -57,7 +46,7 @@
         ''
       ];
       y = [
-        ''
+        /* lua */ ''
           {
             -- Lsp server name
             function()
@@ -66,7 +55,7 @@
 
               if excluded_buf_ft[buf_ft] then
                 return ""
-                end
+              end
 
               local bufnr = vim.api.nvim_get_current_buf()
               local clients = vim.lsp.get_clients({ bufnr = bufnr })
@@ -82,13 +71,12 @@
 
               return table.concat(active_clients, ", ")
             end,
-            -- icon = ' ',
           }
         ''
       ];
       z = [
-        ''
-          { 'location', separator = { right = '', left = '' }, left_padding = 2 }
+        /* lua */ ''
+          { 'location' }
         ''
       ];
     };

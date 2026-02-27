@@ -43,5 +43,20 @@
       action = "<cmd>vertical split<cr>";
       desc = "Split buffer vertically";
     }
+    # Buffers
+    {
+      key = "<M-h>";
+      mode = "n";
+      silent = true;
+      action = "<cmd>bprevious<cr>";
+      desc = "Move to previous buffer";
+    }
+    {
+      key = "<M-l>";
+      mode = "n";
+      silent = true;
+      action = "<cmd>bnext<cr>";
+      desc = "Move to next buffer";
+    }
   ];
 }
