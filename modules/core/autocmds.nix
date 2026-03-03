@@ -2,10 +2,22 @@
 {
   config.vim.autocmds = [
     {
+      event = [ "InsertEnter" ];
+      desc = "Clear builtin snippet highlights";
+      callback = lib.generators.mkLuaInline /* lua */ ''
+        function()
+          if vim.snippet then
+            vim.api.nvim_set_hl(0, "SnippetTabstop", {})
+            vim.api.nvim_set_hl(0, "SnippetTabstopActive", {})
+          end
+        end
+      '';
+    }
+    {
       event = [ "FileType" ];
       pattern = [ "qf" ];
       desc = "Attach keymaps for quickfix list";
-      callback = lib.generators.mkLuaInline ''
+      callback = lib.generators.mkLuaInline /* lua */ ''
         function()
             vim.keymap.set('n', 'dd', function()
                 local qf_list = vim.fn.getqflist()
