@@ -6,6 +6,7 @@
       setupOpts = {
         enable_cursor_hijack = true;
         git_status_async = true;
+        filesystem.use_libuv_file_watcher = true;
         event_handlers = [
           {
             event = "neo_tree_popup_input_ready";
