@@ -24,6 +24,8 @@
       imports = [
         ./flake/formatter.nix
         ./flake/package.nix
+        ./flake/checks.nix
+        ./flake/apps.nix
       ];
     };
 }
