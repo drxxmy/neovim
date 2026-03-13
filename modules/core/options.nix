@@ -34,6 +34,9 @@
       cursorline = true;
       splitbelow = true;
       splitright = true;
+
+      # GUI
+      guifont = "Iosevka Nerd Font Mono:h20";
     };
   };
 }
