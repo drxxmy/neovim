@@ -9,7 +9,7 @@
         key = "<leader>m";
         mode = "n";
         silent = true;
-        action = "<cmd>RenderMarkdown toggle<cr>";
+        action = "<cmd>RenderMarkdown buf_toggle<cr>";
         desc = "Toggle Markdown render";
       }
     ];
