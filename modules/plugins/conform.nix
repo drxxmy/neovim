@@ -2,11 +2,8 @@
 {
   config.vim = {
     extraPackages = with pkgs; [
-      black
-      isort
       prettierd
       rustywind
-      nixfmt
     ];
     formatter.conform-nvim = {
       enable = true;
@@ -15,21 +12,13 @@
           lsp_format = "fallback";
         };
         formatters_by_ft = {
-          nix = [
-            "nixfmt"
-          ];
-          yaml = [
-            "prettierd"
-          ];
-          python = [
-            "isort"
-            "black"
-          ];
+          yaml = [ "prettierd" ];
+          javascript = [ "rustywind" ];
+          typescript = [ "rustywind" ];
+          javascriptreact = [ "rustywind" ];
+          typescriptreact = [ "rustywind" ];
           vue = [
             "rustywind"
-            "prettierd"
-          ];
-          markdown = [
             "prettierd"
           ];
         };
