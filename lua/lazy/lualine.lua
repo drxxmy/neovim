@@ -7,6 +7,7 @@ return {
   end,
   after = function()
     require("lualine").setup({
+      extensions = { "neo-tree" },
       options = {
         icons_enabled = true,
         component_separators = { "", "" },
