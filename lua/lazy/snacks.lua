@@ -101,7 +101,7 @@ return {
       end,
     },
     {
-      "<leader>f",
+      "<leader>bm",
       function()
         require("snacks").zen.zoom()
       end,
