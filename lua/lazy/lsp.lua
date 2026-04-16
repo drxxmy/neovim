@@ -90,8 +90,8 @@ return {
 
       vim.diagnostic.config({
         update_in_insert = true,
-        virtual_text = false,
-        virtual_lines = { enable = true, current_line = true },
+        virtual_text = true,
+        virtual_lines = { current_line = true },
         underline = true,
         signs = {
           text = {
