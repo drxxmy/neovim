@@ -74,6 +74,7 @@
             blink-cmp
             neo-tree-nvim
             nvim-autopairs
+            render-markdown-nvim
           ];
 
           dev.config = {
