@@ -24,6 +24,20 @@ return {
       -- formatting sources
       local formatting = null_ls.builtins.formatting
 
+      -- custom markdown formatter
+      local deno_fmt = {
+        method = null_ls.methods.FORMATTING,
+        filetypes = { "markdown" },
+        generator = null_ls.formatter({
+          command = "deno",
+          args = { "fmt", "$FILENAME" },
+          to_stdin = false,
+          to_temp_file = true,
+        }),
+      }
+
+      null_ls.register(deno_fmt)
+
       local ls_sources = {
         formatting.stylua,
         formatting.nixfmt,
@@ -32,7 +46,6 @@ return {
         formatting.isort,
         formatting.clang_format,
         formatting.fish_indent,
-        formatting.prettierd,
         formatting.rustywind,
         formatting.shfmt,
         formatting.sqruff,
@@ -43,7 +56,6 @@ return {
         diagnostics.gitlint,
         diagnostics.cppcheck,
         diagnostics.fish,
-        diagnostics.markdownlint,
         diagnostics.pylint,
         diagnostics.sqruff,
         diagnostics.stylelint,

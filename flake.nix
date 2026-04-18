@@ -110,7 +110,6 @@
             yamlfmt
             gitlint
             cppcheck
-            markdownlint-cli
             pylint
             stylelint
             yamllint
@@ -121,6 +120,8 @@
             nixfmt
 
             just-lsp
+
+            deno
 
             ripgrep
             fd
