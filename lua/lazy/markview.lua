@@ -1,18 +1,22 @@
 return {
-  "render-markdown.nvim",
+  "markview.nvim",
   ft = "markdown",
   before = function()
     local lzn = require("lz.n")
     lzn.trigger_load("nvim-web-devicons")
   end,
   after = function()
-    require("render-markdown").setup()
+    require("markview").setup({
+      preview = {
+        icon_provider = "devicons",
+      },
+    })
   end,
   keys = {
     {
       "<leader>m",
       function()
-        require("render-markdown").buf_toggle()
+        require("markview.commands").toggle()
       end,
     },
   },
