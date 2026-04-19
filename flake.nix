@@ -63,6 +63,8 @@
             comment-nvim
             bufferline-nvim
             lazydev-nvim
+            luasnip
+            friendly-snippets
           ];
 
           # Lazy loaded plugins

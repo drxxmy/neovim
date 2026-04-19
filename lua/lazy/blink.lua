@@ -7,6 +7,7 @@ return {
       local lzn = require("lz.n")
       lzn.trigger_load("lspkind.nvim")
       lzn.trigger_load("lazydev")
+      lzn.trigger_load("luasnip")
     end,
     after = function()
       require("blink.cmp").setup({
