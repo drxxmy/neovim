@@ -22,6 +22,7 @@ vim.opt.cursorline = true               -- highlight cursor line underneath the 
 vim.opt.splitbelow = true               -- new horizontal split goes below
 vim.opt.splitright = true               -- new vertical split goes right
 vim.opt.fillchars:append({ eob = " " }) -- hide EOB symbols
+vim.opt.signcolumn = "yes"              -- always show a sign column
 
 -- Searching
 vim.opt.incsearch = true  -- search as characters are entered
