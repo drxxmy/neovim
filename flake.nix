@@ -66,6 +66,7 @@
             luasnip
             friendly-snippets
             hlargs-nvim
+            kitty-scrollback-nvim
           ];
 
           # Lazy loaded plugins
