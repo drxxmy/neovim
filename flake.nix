@@ -65,6 +65,7 @@
             lazydev-nvim
             luasnip
             friendly-snippets
+            hlargs-nvim
           ];
 
           # Lazy loaded plugins
