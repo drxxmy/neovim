@@ -8,3 +8,14 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     end
   end,
 })
+
+-- Clear builtin snippet highlights
+vim.api.nvim_create_autocmd("InsertEnter", {
+  desc = "Clear builtin snippet highlights",
+  callback = function()
+    if vim.snippet then
+      vim.api.nvim_set_hl(0, "SnippetTabstop", {})
+      vim.api.nvim_set_hl(0, "SnippetTabstopActive", {})
+    end
+  end,
+})
