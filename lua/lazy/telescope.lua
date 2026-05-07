@@ -3,7 +3,9 @@ return {
   cmd = "Telescope",
 
   after = function()
-    require("telescope").setup()
+    local telescope = require("telescope")
+    telescope.setup({})
+    telescope.load_extension("manix")
   end,
   keys = {
     {
@@ -26,6 +28,13 @@ return {
         require("telescope.builtin").live_grep()
       end,
       desc = "Live Grep (Telescope)",
+    },
+    {
+      "<leader>fm",
+      function()
+        require("telescope-manix").search()
+      end,
+      desc = "Manix (Telescope)",
     },
   },
 }

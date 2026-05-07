@@ -48,6 +48,7 @@
 
             telescope-nvim
             telescope-fzf-native-nvim
+            telescope-manix
 
             nvim-treesitter.withAllGrammars
             nvim-lspconfig
@@ -123,6 +124,7 @@
             deadnix
             statix
             nixfmt
+            manix
 
             just-lsp
 
