@@ -27,30 +27,35 @@ return {
       function()
         require("bufferline").cycle(-1)
       end,
+      desc = "Cycle buffers to the left",
     },
     {
       "<M-l>",
       function()
         require("bufferline").cycle(1)
       end,
+      desc = "Cycle buffers to the right",
     },
     {
       "<M-,>",
       function()
         require("bufferline").move(-1)
       end,
+      desc = "Move buffer to the left",
     },
     {
       "<M-.>",
       function()
         require("bufferline").move(1)
       end,
+      desc = "Move buffer to the right",
     },
     {
       "<M-p>",
       function()
         require("bufferline").pick_buffer()
       end,
+      desc = "Pick a buffer",
     },
   },
 }

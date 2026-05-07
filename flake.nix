@@ -67,6 +67,7 @@
             friendly-snippets
             hlargs-nvim
             kitty-scrollback-nvim
+            which-key-nvim
           ];
 
           # Lazy loaded plugins

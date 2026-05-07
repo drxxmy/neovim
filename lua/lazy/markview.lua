@@ -18,6 +18,7 @@ return {
       function()
         require("markview.commands").toggle()
       end,
+      desc = "Toggle Markview",
     },
   },
 }

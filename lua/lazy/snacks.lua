@@ -53,6 +53,7 @@ return {
       function()
         require("snacks").bufdelete.delete()
       end,
+      desc = "Delete buffer",
     },
     -- Git
     {
@@ -60,18 +61,21 @@ return {
       function()
         require("snacks").git.blame_line()
       end,
+      desc = "Git Blame",
     },
     {
       "<leader>gg",
       function()
         require("snacks").lazygit.open()
       end,
+      desc = "Toggle Lazygit",
     },
     {
       "<leader>gl",
       function()
         require("snacks").lazygit.log()
       end,
+      desc = "Toggle Lazygit Log",
     },
     -- Words
     {
@@ -79,12 +83,14 @@ return {
       function()
         require("snacks").words.jump(vim.v.count1)
       end,
+      desc = "Jump to the next word occurance",
     },
     {
       "[[",
       function()
         require("snacks").words.jump(-vim.v.count1)
       end,
+      desc = "Jump to the previous word occurance",
     },
     -- Terminal
     {
@@ -92,6 +98,7 @@ return {
       function()
         require("snacks").terminal()
       end,
+      desc = "Open Terminal buffer",
     },
     -- Zen
     {
@@ -99,12 +106,14 @@ return {
       function()
         require("snacks").zen.zen()
       end,
+      desc = "Toggle Zen mode",
     },
     {
       "<leader>bm",
       function()
         require("snacks").zen.zoom()
       end,
+      desc = "Zoom current buffer",
     },
   },
 }

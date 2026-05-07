@@ -55,6 +55,7 @@ return {
     {
       "<leader>e",
       "<cmd>Neotree toggle<cr>",
+      desc = "Toggle NeoTree",
     },
   },
 }
