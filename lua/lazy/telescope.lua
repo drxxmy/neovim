@@ -6,6 +6,7 @@ return {
     local telescope = require("telescope")
     telescope.setup({})
     telescope.load_extension("manix")
+    telescope.load_extension("fzf")
   end,
   keys = {
     {
