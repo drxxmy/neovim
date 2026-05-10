@@ -122,7 +122,7 @@ return {
       })
 
       -- Enable LSP
-      vim.lsp.enable({ "nixd", "lua_ls", "just", "marksman" })
+      vim.lsp.enable({ "nixd", "lua_ls", "just", "marksman", "clangd" })
     end,
   },
 }
