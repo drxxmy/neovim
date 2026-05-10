@@ -14,7 +14,6 @@ return {
               desc = "find file",
               action = ":lua Snacks.dashboard.pick('files')",
             },
-            { icon = " ", key = "n", desc = "new file", action = ":ene | startinsert" },
             {
               icon = " ",
               key = "s",
@@ -32,8 +31,23 @@ return {
         },
         sections = {
           { section = "header" },
-          { icon = " ", title = "recent files", section = "recent_files", indent = 2, padding = 1 },
-          { icon = " ", title = "projects", section = "projects", indent = 2, padding = 1 },
+          {
+            icon = " ",
+            title = "recent files",
+            section = "recent_files",
+            limit = 4,
+            cwd = true,
+            indent = 2,
+            padding = 1,
+          },
+          {
+            icon = " ",
+            title = "projects",
+            section = "projects",
+            limit = 3,
+            indent = 2,
+            padding = 1,
+          },
           { icon = " ", title = "keymaps", section = "keys", indent = 2, padding = 1 },
         },
       },
