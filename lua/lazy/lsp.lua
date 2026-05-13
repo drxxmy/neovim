@@ -60,7 +60,6 @@ return {
         diagnostics.sqruff,
         diagnostics.stylelint,
         diagnostics.tidy,
-        diagnostics.yamllint,
 
         code_actions.statix,
       }
