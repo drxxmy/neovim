@@ -45,38 +45,35 @@
           start = with pkgs.vimPlugins; [
             lz-n
             plenary-nvim
-
             nvim-treesitter.withAllGrammars
-            nvim-lspconfig
-            lspkind-nvim
-            none-ls-nvim
-
-            vim-tmux-navigator
-            flash-nvim
-
-            noice-nvim
-            lualine-nvim
-            snacks-nvim
-            comment-nvim
-            bufferline-nvim
-            lazydev-nvim
-            luasnip
-            friendly-snippets
-            hlargs-nvim
-            kitty-scrollback-nvim
-            which-key-nvim
           ];
 
           # Lazy loaded plugins
           opt = with pkgs.vimPlugins; [
+            nvim-lspconfig
+            none-ls-nvim
+            lspkind-nvim
+            blink-cmp
+            lazydev-nvim
+            luasnip
+            friendly-snippets
             nvim-web-devicons
             gitsigns-nvim
             colorful-winsep-nvim
             rose-pine
-            blink-cmp
             neo-tree-nvim
             nvim-autopairs
             markview-nvim
+            flash-nvim
+            noice-nvim
+            lualine-nvim
+            snacks-nvim
+            hlargs-nvim
+            bufferline-nvim
+            kitty-scrollback-nvim
+            which-key-nvim
+            vim-tmux-navigator
+            comment-nvim
           ];
 
           dev.config = {

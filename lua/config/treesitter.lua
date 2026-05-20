@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.treesitter.start()
   end,
 })
+
 require("nvim-treesitter").setup({
   modules = {},
   sync_install = false,

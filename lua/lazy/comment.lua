@@ -1,5 +1,5 @@
 return {
-  "Comment.nvim",
+  "comment.nvim",
   event = "BufReadPost",
   after = function()
     require("Comment").setup()

@@ -139,6 +139,13 @@ return {
       end,
       desc = "LSP Symbols",
     },
+    {
+      "<leader>n",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "Notification History",
+    },
     -- Buffers
     {
       "<A-c>",

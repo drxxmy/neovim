@@ -1,7 +1,7 @@
 return {
   { "friendly-snippets" },
   {
-    "luasnip.nvim",
+    "luasnip",
     event = "DeferredUIEnter",
     before = function()
       local lzn = require("lz.n")
