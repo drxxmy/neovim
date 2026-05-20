@@ -12,19 +12,25 @@ return {
               icon = " ",
               key = "f",
               desc = "find file",
-              action = Snacks.dashboard.pick("files"),
+              action = function()
+                Snacks.dashboard.pick("files")
+              end,
             },
             {
               icon = " ",
               key = "s",
               desc = "find text",
-              action = Snacks.dashboard.pick("live_grep"),
+              action = function()
+                Snacks.dashboard.pick("live_grep")
+              end,
             },
             {
               icon = " ",
               key = "r",
               desc = "recent files",
-              action = Snacks.dashboard.pick("oldfiles"),
+              action = function()
+                Snacks.dashboard.pick("oldfiles")
+              end,
             },
             { icon = " ", key = "q", desc = "quit", action = ":qa" },
           },
