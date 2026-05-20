@@ -27,6 +27,7 @@ return {
       function()
         require("bufferline").cycle(-1)
       end,
+      mode = { "n", "t", "i" },
       desc = "Cycle buffers to the left",
     },
     {
@@ -34,6 +35,7 @@ return {
       function()
         require("bufferline").cycle(1)
       end,
+      mode = { "n", "t", "i" },
       desc = "Cycle buffers to the right",
     },
     {
@@ -41,6 +43,7 @@ return {
       function()
         require("bufferline").move(-1)
       end,
+      mode = { "n", "t", "i" },
       desc = "Move buffer to the left",
     },
     {
@@ -48,6 +51,7 @@ return {
       function()
         require("bufferline").move(1)
       end,
+      mode = { "n", "t", "i" },
       desc = "Move buffer to the right",
     },
     {
@@ -55,6 +59,7 @@ return {
       function()
         require("bufferline").pick_buffer()
       end,
+      mode = { "n", "i" },
       desc = "Pick a buffer",
     },
   },

@@ -158,6 +158,7 @@ return {
       function()
         require("snacks").bufdelete.delete()
       end,
+      mode = { "n", "v", "t" },
       desc = "Delete buffer",
     },
     -- Git
