@@ -1,22 +1,21 @@
 return {
-	"flash.nvim",
-	after = function()
-		require("flash").setup({})
-	end,
-	keys = {
-		{
-			"s",
-			function()
-				require("flash").jump()
-			end,
-			desc = "Jump (Flash)",
-		},
-		{
-			"S",
-			function()
-				require("flash").treesitter()
-			end,
-			desc = "Treesitter (Flash)",
-		},
-	},
+  "flash.nvim",
+  keys = {
+    {
+      "s",
+      function()
+        require("flash").jump()
+      end,
+      mode = { "n", "v" },
+      desc = "Jump (Flash)",
+    },
+    {
+      "S",
+      function()
+        require("flash").treesitter()
+      end,
+      mode = { "n", "v" },
+      desc = "Treesitter (Flash)",
+    },
+  },
 }
