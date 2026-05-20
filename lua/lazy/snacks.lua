@@ -55,12 +55,90 @@ return {
       image = { enabled = true },
       input = { enabled = true },
       lazygit = { enabled = true },
+      picker = {
+        enabled = true,
+        previewers = {
+          git = { builtin = false },
+        },
+        win = {
+          input = {
+            keys = {
+              ["<S-k>"] = { "preview_scroll_up", mode = { "n" } },
+              ["<S-j>"] = { "preview_scroll_down", mode = { "n" } },
+            },
+          },
+        },
+      },
       quickfile = { enabled = true },
       words = { enabled = true },
       zen = { enabled = true, minimal = true, backdrop = { transparent = false } },
     })
   end,
   keys = {
+    -- Picker
+    {
+      "<leader>fb",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Buffers",
+    },
+    {
+      "<leader>ff",
+      function()
+        Snacks.picker.files()
+      end,
+      desc = "Find Files",
+    },
+    {
+      "<leader>fs",
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = "Live Grep",
+    },
+    {
+      "<leader>fh",
+      function()
+        Snacks.picker.help()
+      end,
+      desc = "Help Pages",
+    },
+    {
+      "<leader>gl",
+      function()
+        Snacks.picker.git_log()
+      end,
+      desc = "Git Log",
+    },
+    {
+      "<leader>gs",
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = "Git Status",
+    },
+    {
+      "<leader>gd",
+      function()
+        Snacks.picker.git_diff()
+      end,
+      desc = "Git Diff (Hunks)",
+    },
+    {
+      "<leader>sd",
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = "Diagnostics",
+    },
+    {
+      "<leader>ss",
+      function()
+        Snacks.picker.lsp_symbols()
+      end,
+      desc = "LSP Symbols",
+    },
     -- Buffers
     {
       "<A-c>",
@@ -83,13 +161,6 @@ return {
         require("snacks").lazygit.open()
       end,
       desc = "Toggle Lazygit",
-    },
-    {
-      "<leader>gl",
-      function()
-        require("snacks").lazygit.log()
-      end,
-      desc = "Toggle Lazygit Log",
     },
     -- Words
     {
