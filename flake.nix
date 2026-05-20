@@ -46,6 +46,7 @@
             lz-n
             plenary-nvim
             nvim-treesitter.withAllGrammars
+            vim-tmux-navigator
           ];
 
           # Lazy loaded plugins
@@ -72,7 +73,6 @@
             bufferline-nvim
             kitty-scrollback-nvim
             which-key-nvim
-            vim-tmux-navigator
             comment-nvim
           ];
 
