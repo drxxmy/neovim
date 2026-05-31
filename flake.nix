@@ -53,7 +53,6 @@
           # Lazy loaded plugins
           opt = with pkgs.vimPlugins; [
             nvim-lspconfig
-            none-ls-nvim
             lspkind-nvim
             blink-cmp
             lazydev-nvim
@@ -75,6 +74,8 @@
             kitty-scrollback-nvim
             which-key-nvim
             comment-nvim
+            conform-nvim
+            nvim-lint
           ];
 
           dev.config = {
