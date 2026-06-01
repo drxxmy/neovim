@@ -76,6 +76,7 @@
             comment-nvim
             conform-nvim
             nvim-lint
+            mini-surround
           ];
 
           dev.config = {
