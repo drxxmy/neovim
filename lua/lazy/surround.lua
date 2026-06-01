@@ -1,7 +1,7 @@
 return {
-	"mini.surround",
+	"nvim-surround",
 	event = { "BufReadPre", "BufNewFile" },
 	after = function()
-		require("mini.surround").setup()
+		require("nvim-surround").setup()
 	end,
 }
