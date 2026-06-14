@@ -32,6 +32,14 @@ return {
                 Snacks.dashboard.pick("oldfiles")
               end,
             },
+            {
+              icon = " ",
+              key = "b",
+              desc = "browse repo",
+              action = function()
+                Snacks.gitbrowse()
+              end,
+            },
             { icon = " ", key = "q", desc = "quit", action = ":qa" },
           },
         },
