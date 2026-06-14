@@ -41,6 +41,12 @@ return {
             icon = " ",
             title = "recent files",
             section = "recent_files",
+            filter = function(file)
+              if file:match("/.git/") then
+                return false
+              end
+              return true
+            end,
             limit = 4,
             cwd = true,
             indent = 2,
