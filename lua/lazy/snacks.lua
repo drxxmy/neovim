@@ -177,7 +177,7 @@ return {
     },
     -- Git
     {
-      "<leader>gb",
+      "<leader>gB",
       function()
         Snacks.git.blame_line()
       end,
