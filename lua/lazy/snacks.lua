@@ -170,7 +170,7 @@ return {
     {
       "<A-c>",
       function()
-        require("snacks").bufdelete.delete()
+        Snacks.bufdelete.delete()
       end,
       mode = { "n", "v", "t" },
       desc = "Delete buffer",
@@ -179,14 +179,14 @@ return {
     {
       "<leader>gb",
       function()
-        require("snacks").git.blame_line()
+        Snacks.git.blame_line()
       end,
       desc = "Git Blame",
     },
     {
       "<leader>gg",
       function()
-        require("snacks").lazygit.open()
+        Snacks.lazygit.open()
       end,
       desc = "Toggle Lazygit",
     },
@@ -194,14 +194,14 @@ return {
     {
       "]]",
       function()
-        require("snacks").words.jump(vim.v.count1)
+        Snacks.words.jump(vim.v.count1)
       end,
       desc = "Jump to the next word occurance",
     },
     {
       "[[",
       function()
-        require("snacks").words.jump(-vim.v.count1)
+        Snacks.words.jump(-vim.v.count1)
       end,
       desc = "Jump to the previous word occurance",
     },
@@ -209,7 +209,7 @@ return {
     {
       "<leader>t",
       function()
-        require("snacks").terminal()
+        Snacks.terminal()
       end,
       desc = "Open Terminal buffer",
     },
@@ -217,14 +217,14 @@ return {
     {
       "<leader>z",
       function()
-        require("snacks").zen.zen()
+        Snacks.zen.zen()
       end,
       desc = "Toggle Zen mode",
     },
     {
       "<leader>bm",
       function()
-        require("snacks").zen.zoom()
+        Snacks.zen.zoom()
       end,
       desc = "Zoom current buffer",
     },
