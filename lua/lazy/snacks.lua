@@ -184,6 +184,13 @@ return {
       desc = "Git Blame",
     },
     {
+      "<leader>gb",
+      function()
+        Snacks.gitbrowse.open()
+      end,
+      desc = "Git Browse",
+    },
+    {
       "<leader>gg",
       function()
         Snacks.lazygit.open()
