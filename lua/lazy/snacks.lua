@@ -75,6 +75,16 @@ return {
       image = { enabled = true },
       input = { enabled = true },
       lazygit = { enabled = true },
+      gitbrowse = {
+        url_patterns = {
+          ["codeberg%.org"] = {
+            branch = "/src/branch/{branch}",
+            file = "/src/branch/{branch}/{file}#L{line_start}-L{line_end}",
+            permalink = "/src/commit/{commit}/{file}#L{line_start}-L{line_end}",
+            commit = "/commit/{commit}",
+          },
+        },
+      },
       picker = {
         enabled = true,
         previewers = {
