@@ -77,6 +77,7 @@
             conform-nvim
             nvim-lint
             nvim-surround
+            nvim-ufo
           ];
 
           dev.config = {
