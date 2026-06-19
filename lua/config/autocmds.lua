@@ -1,3 +1,13 @@
+-- Disable folding for neo-tree
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "neo-tree",
+  callback = function()
+    require("ufo").detach()
+    vim.wo.foldenable = false
+    vim.wo.foldcolumn = "0"
+  end,
+})
+
 -- Open help pages in a new buffer instead of hsplit
 vim.api.nvim_create_autocmd("BufWinEnter", {
   pattern = "*",
