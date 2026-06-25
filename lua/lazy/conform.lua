@@ -5,7 +5,7 @@ return {
 		local conform = require("conform")
 
 		conform.formatters.deno_fmt = {
-			append_args = { "--unstable-component" },
+			append_args = { "--unstable-component", "--prose-wrap", "preserve" },
 		}
 
 		conform.setup({
