@@ -105,7 +105,6 @@
             marksman
             isort
             clang-tools
-            prettierd
             rustywind
             shfmt
             sqruff
