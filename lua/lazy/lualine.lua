@@ -42,8 +42,7 @@ return {
         lualine_y = {
           function()
             local buf_ft = vim.bo.filetype
-            local excluded_buf_ft =
-            { toggleterm = true, NvimTree = true, ["neo-tree"] = true, TelescopePrompt = true }
+            local excluded_buf_ft = { toggleterm = true, NvimTree = true, ["neo-tree"] = true, TelescopePrompt = true }
 
             if excluded_buf_ft[buf_ft] then
               return ""
