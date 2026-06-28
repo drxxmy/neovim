@@ -15,54 +15,55 @@ nix run github:drxxmy/neovim
 ### NixOS
 
 ```nix
+# flake.nix
 {
   inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     neovim.url = "github:drxxmy/neovim";
   };
 
-  outputs = {neovim, ...}: let
-    system = "x86_64-linux";
-  in {
-    # Example nixosConfiguration using the configured Neovim package
-    nixosConfigurations = {
-      yourHostName = nixpkgs.lib.nixosSystem {
-        # ...
+  outputs =
+    { nixpkgs, neovim, ... }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      # This will make Neovim available in your system packages
+      nixosConfigurations.yourHostName = nixpkgs.lib.nixosSystem {
         modules = [
-          # This will make custom neovim available in your system packages
-          ({pkgs, ...}: {
-            environment.systemPackages = [neovim.packages.${system}.neovim];
-          })
+          {
+            environment.systemPackages = [ neovim.packages.${system}.neovim ];
+          }
         ];
-        # ...
       };
     };
-  };
 }
 ```
 
 ### Home-Manager
 
 ```nix
+# flake.nix
 {
   inputs = {
     home-manager.url = "github:nix-community/home-manager";
     neovim.url = "github:drxxmy/neovim";
   };
 
-  outputs = {home-manager, neovim, ...}: let
-    system = "x86_64-linux";
-  in {
-    # Example Home-Manager configuration using the configured Neovim package
-    homeConfigurations = {
-      "user@host" = home-manager.lib.homeManagerConfiguration {
-        # ...
+  outputs =
+    { home-manager, neovim, ... }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      # This will make Neovim available on a user level.
+      homeConfigurations."user@host" = home-manager.lib.homeManagerConfiguration {
         modules = [
-          # This will make Neovim available to users using the Home-Manager configuration.
-          {home.packages = [neovim.packages.${system}.neovim];}
+          {
+            home.packages = [ neovim.packages.${system}.neovim ];
+          }
         ];
-        # ...
       };
     };
-  };
 }
 ```
