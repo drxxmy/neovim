@@ -15,14 +15,23 @@ return {
       require("lspconfig")[ls].setup({ capabilities = capabilities })
     end
 
-    require("ufo").setup()
+    require("ufo").setup({
+      close_fold_kinds_for_ft = {
+        default = { "imports", "comment" },
+      },
+    })
   end,
   keys = {
     {
-      "z",
-      "za",
+      "K",
+      function()
+        local winid = require("ufo").peekFoldedLinesUnderCursor()
+        if not winid then
+          vim.lsp.buf.hover()
+        end
+      end,
       mode = "n",
-      desc = "Fold (UFO)",
+      desc = "Peek Folded Lines (UFO)",
     },
   },
 }
