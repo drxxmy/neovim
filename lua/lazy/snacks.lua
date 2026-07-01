@@ -1,6 +1,9 @@
 return {
   "snacks.nvim",
   event = "VimEnter",
+  before = function()
+    require("todo-comments").setup()
+  end,
   after = function()
     require("snacks").setup({
       dashboard = {
@@ -197,6 +200,20 @@ return {
         Snacks.picker.git_diff()
       end,
       desc = "Git Diff (Hunks)",
+    },
+    {
+      "<leader>st",
+      function()
+        Snacks.picker.todo_comments()
+      end,
+      desc = "Todo",
+    },
+    {
+      "<leader>sT",
+      function()
+        Snacks.picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME" } })
+      end,
+      desc = "Todo/Fix/Fixme",
     },
     {
       "<leader>sd",

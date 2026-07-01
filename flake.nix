@@ -78,6 +78,7 @@
             nvim-lint
             nvim-surround
             nvim-ufo
+            todo-comments-nvim
           ];
 
           dev.config = {
