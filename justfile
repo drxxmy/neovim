@@ -1,7 +1,5 @@
-# https://just.systems
-
 default:
-    @just --list
+    @just dev
 
 run:
     @nix run .#packages.x86_64-linux.default
