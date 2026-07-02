@@ -27,9 +27,6 @@
     {
       devShells.${system}.default = pkgs.mkShellNoCC {
         packages = [ self.packages.${system}.default.devMode ];
-        shellHook = ''
-          tmuxinator .
-        '';
       };
 
       packages.${system}.default = mnw.lib.wrap pkgs {

@@ -1,5 +1,0 @@
-name: neovim
-root: ~/dev/neovim/
-windows:
-  - neovim: just dev
-  - lazygit: lazygit
