@@ -6,6 +6,9 @@ return {
   end,
   after = function()
     require("snacks").setup({
+      statuscolumn = {
+        enabled = true,
+      },
       dashboard = {
         enabled = true,
         preset = {
