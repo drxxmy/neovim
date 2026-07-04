@@ -76,6 +76,7 @@
             nvim-ufo
             todo-comments-nvim
             quicker-nvim
+            lspsaga-nvim
           ];
 
           dev.config = {

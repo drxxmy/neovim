@@ -1,5 +1,27 @@
 return {
   {
+    "lspsaga.nvim",
+    event = "BufReadPost",
+    after = function()
+      require("lspsaga").setup({
+        code_action = {
+          show_server_name = true,
+        },
+        symbol_in_winbar = {
+          enable = false,
+        },
+        lightbulb = { virtual_text = false },
+      })
+    end,
+    keys = {
+      {
+        "gra",
+        "<cmd>Lspsaga code_action<cr>",
+        mode = { "n", "v" },
+      },
+    },
+  },
+  {
     "nvim-lspconfig",
     event = "DeferredUIEnter",
     before = function()
