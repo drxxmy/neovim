@@ -75,6 +75,7 @@
             nvim-surround
             nvim-ufo
             todo-comments-nvim
+            quicker-nvim
           ];
 
           dev.config = {
