@@ -6,9 +6,65 @@ return {
     lzn.trigger_load("nvim-web-devicons")
   end,
   after = function()
+    local snacks = require("snacks")
+
+    local function get_statusline()
+      local filetype = vim.bo.filetype
+      local title = filetype
+      local meta = ""
+
+      if filetype == "snacks_terminal" then
+        title = "TERMINAL"
+        meta = vim.fn.expand("%:t"):match(".*:(%S+)$") or vim.fn.expand("%:t")
+      elseif filetype == "snacks_picker_list" then
+        title = "EXPLORER"
+        local picker = snacks.picker.get()[1]
+        if picker then
+          meta = vim.fn.fnamemodify(picker:dir(), ":~")
+        else
+          meta = vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
+        end
+      elseif filetype == "snacks_picker_input" then
+        title = "PICKER"
+        local picker = snacks.picker.get()[1]
+        if picker then
+          local input = picker.input and picker.input:get() or ""
+          local count = #picker:items()
+          meta = input ~= "" and (" " .. input .. ": " .. count .. " results") or (count .. " results")
+        else
+          meta = ""
+        end
+      end
+
+      return title, meta
+    end
+
+    local lualine_snacks = {
+      sections = {
+        lualine_a = {
+          function()
+            local title, _ = get_statusline()
+            return title
+          end,
+        },
+        lualine_b = {
+          function()
+            local _, meta = get_statusline()
+            return meta
+          end,
+        },
+      },
+      filetypes = {
+        "snacks_picker_input",
+        "snacks_picker_list",
+        "snacks_terminal",
+      },
+    }
+
     require("lualine").setup({
-      extensions = { "neo-tree" },
+      extensions = { lualine_snacks },
       options = {
+        globalstatus = true,
         icons_enabled = true,
         component_separators = { "", "" },
         section_separators = { "", "" },
@@ -42,7 +98,7 @@ return {
         lualine_y = {
           function()
             local buf_ft = vim.bo.filetype
-            local excluded_buf_ft = { toggleterm = true, NvimTree = true, ["neo-tree"] = true, TelescopePrompt = true }
+            local excluded_buf_ft = { toggleterm = true, TelescopePrompt = true }
 
             if excluded_buf_ft[buf_ft] then
               return ""

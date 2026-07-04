@@ -59,7 +59,6 @@
             gitsigns-nvim
             colorful-winsep-nvim
             rose-pine
-            neo-tree-nvim
             nvim-autopairs
             markview-nvim
             flash-nvim

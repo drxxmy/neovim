@@ -10,7 +10,7 @@ return {
       options = {
         style_preset = require("bufferline").style_preset.minimal,
         offsets = {
-          { filetype = "neo-tree", text = "File Explorer", text_align = "center", separator = true },
+          { filetype = "snacks_layout_box", separator = true },
         },
         show_tab_indicators = false,
         hover = {

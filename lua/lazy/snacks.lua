@@ -93,6 +93,17 @@ return {
         previewers = {
           git = { builtin = false },
         },
+        sources = {
+          explorer = {
+            win = {
+              list = {
+                keys = {
+                  ["s"] = "confirm",
+                },
+              },
+            },
+          },
+        },
         win = {
           input = {
             keys = {
@@ -108,6 +119,14 @@ return {
     })
   end,
   keys = {
+    -- Explorer
+    {
+      "<leader>e",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "Open explorer",
+    },
     -- Picker
     {
       "<leader>fb",
