@@ -10,7 +10,7 @@ return {
         symbol_in_winbar = {
           enable = false,
         },
-        lightbulb = { virtual_text = false },
+        lightbulb = { enable = false },
       })
     end,
     keys = {
