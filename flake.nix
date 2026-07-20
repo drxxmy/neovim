@@ -42,41 +42,41 @@
         plugins = {
           start = with pkgs.vimPlugins; [
             lz-n
-            plenary-nvim
             nvim-treesitter.withAllGrammars
+            plenary-nvim
             vim-tmux-navigator
           ];
 
           # Lazy loaded plugins
           opt = with pkgs.vimPlugins; [
-            nvim-lspconfig
-            lspkind-nvim
             blink-cmp
-            lazydev-nvim
-            luasnip
-            friendly-snippets
-            nvim-web-devicons
-            gitsigns-nvim
-            colorful-winsep-nvim
-            rose-pine
-            nvim-autopairs
-            markview-nvim
-            flash-nvim
-            noice-nvim
-            lualine-nvim
-            snacks-nvim
-            hlargs-nvim
             bufferline-nvim
-            kitty-scrollback-nvim
-            which-key-nvim
+            colorful-winsep-nvim
             comment-nvim
             conform-nvim
+            flash-nvim
+            friendly-snippets
+            gitsigns-nvim
+            hlargs-nvim
+            kitty-scrollback-nvim
+            lazydev-nvim
+            lspkind-nvim
+            lspsaga-nvim
+            lualine-nvim
+            luasnip
+            markview-nvim
+            noice-nvim
+            nvim-autopairs
             nvim-lint
+            nvim-lspconfig
             nvim-surround
             nvim-ufo
-            todo-comments-nvim
+            nvim-web-devicons
             quicker-nvim
-            lspsaga-nvim
+            rose-pine
+            snacks-nvim
+            todo-comments-nvim
+            which-key-nvim
           ];
 
           dev.config = {
@@ -97,35 +97,31 @@
         # Runtime dependencies
         extraBinPath = builtins.attrValues {
           inherit (pkgs)
-            lua-language-server
-            stylua
-            selene
             black
-            marksman
-            isort
             clang-tools
+            cppcheck
+            deadnix
+            deno
+            fd
+            gitlint
+            html-tidy
+            isort
+            just-lsp
+            lua-language-server
+            marksman
+            nixd
+            nixfmt
+            pylint
+            ripgrep
             rustywind
+            selene
             shfmt
             sqruff
-            html-tidy
-            yamlfmt
-            gitlint
-            cppcheck
-            pylint
-            stylelint
-            yamllint
-
-            nixd
-            deadnix
             statix
-            nixfmt
-
-            just-lsp
-
-            deno
-
-            ripgrep
-            fd
+            stylelint
+            stylua
+            yamlfmt
+            yamllint
             ;
         };
       };
