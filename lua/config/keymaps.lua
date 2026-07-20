@@ -13,3 +13,6 @@ map("n", "<leader>|", "<cmd>vertical split<cr>", { desc = "Open vertical split" 
 
 -- Terminal mode
 map("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal mode" })
+
+-- Sort lines
+map("v", "gs", ":sort<cr>", { desc = "Sort lines" })
