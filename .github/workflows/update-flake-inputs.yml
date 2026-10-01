@@ -32,3 +32,16 @@ jobs:
         uses: mic92/update-flake-inputs@main
         with:
           github-token: ${{ steps.app-token.outputs.token }}
+
+      - name: Enable auto-merge for flake update PRs
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          gh pr list \
+            --state open \
+            --json number,headRefName \
+            --jq '.[] | select(.headRefName | startswith("update-")) | .number' |
+          while read -r pr; do
+            echo "Enabling auto-merge for PR #$pr"
+            gh pr merge "$pr" --auto --squash
+          done
